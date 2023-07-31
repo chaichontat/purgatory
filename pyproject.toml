@@ -1,0 +1,46 @@
+[tool.poetry]
+authors = [
+  "Chaichontat Sriworarat <34997334+chaichontat@users.noreply.github.com>",
+]
+description = ""
+license = "MIT"
+name = "purgatory"
+version = "0.0.1"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[tool.bandit]
+exclude = "test"
+skips = ["B101", "B404", "B603", "B607"]
+targets = "src"
+
+[tool.black]
+line-length = 110
+target-version = ['py311']
+
+[tool.pyright]
+pythonVersion = "3.11"
+reportMissingTypeStubs = false
+reportPrivateUsage = false
+reportPropertyTypeMismatch = false
+reportUnknownArgumentType = false
+reportUnknownLambdaType = false
+reportUnknownMemberType = false
+reportUnknownVariableType = false
+reportUntypedFunctionDecorator = false
+reportUnusedImport = false
+reportUnusedVariable = "warning"
+typeCheckingMode = "strict"
+
+[tool.isort]
+line_length = 110
+profile = "black"
+py_version = 311
+
+[tool.pytest.ini_options]
+log_cli = 1
+# log_cli_level = "DEBUG"
+minversion = "7.0"
+testpaths = ["test"]
